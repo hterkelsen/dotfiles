@@ -2,7 +2,6 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (if (file-readable-p custom-file)
     (load-file custom-file))
-    
 
 ;; load packages
 (load "~/.emacs.d/my-loadpackages.el")
