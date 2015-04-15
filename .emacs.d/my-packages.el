@@ -22,6 +22,7 @@
     ycmd
     company-ycmd
     flycheck-ycmd
+    monokai-theme
   ) "a list of packages to ensure are installed at launch.")
 
 (require 'cl)
