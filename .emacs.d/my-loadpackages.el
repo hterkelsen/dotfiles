@@ -12,13 +12,16 @@
 (require 'helm-projectile)
 (helm-projectile-on)
 
+;; Flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
 ;; Company + YCMD
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 
 (require 'ycmd)
 (ycmd-setup)
-(set-variable 'ycmd-server-command '("python" "~/Code/ycmd/ycmd"))
+(set-variable 'ycmd-server-command '("python" "~/git/ycmd/ycmd"))
 
 (require 'company-ycmd)
 (company-ycmd-setup)

@@ -17,7 +17,11 @@
     helm-projectile
     magit
     yaml-mode
+    flycheck
+    company
+    ycmd
     company-ycmd
+    flycheck-ycmd
   ) "a list of packages to ensure are installed at launch.")
 
 (require 'cl)
