@@ -43,7 +43,7 @@
       x-select-enable-primary t
       save-interprogram-paste-before-kill t)
 
-;; Apropos commands do more extensive searches that default
+;; Apropos commands do more extensive searches than default
 (setq apropos-do-all t)
 
 ;; Mouse yanking inserts at point rather than the location of the click
@@ -67,3 +67,11 @@
 (add-hook 'org-mode-hook (lambda ()
   (auto-fill-mode)
   (set-fill-column 66)))
+
+;; Steve Yegge stuff
+(global-set-key "\C-x\C-m" 'execute-extended-command)
+(global-set-key "\C-c\C-m" 'execute-extended-command)
+
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-c\C-k" 'kill-region)
