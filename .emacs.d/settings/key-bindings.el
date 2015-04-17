@@ -4,12 +4,7 @@
 (global-set-key (kbd "C-x C-c") 'delete-frame)
 
 ;; Completion that uses many different methods to find options.
-(global-set-key (kbd "C-.") 'hippie-expand-no-case-fold)
-(global-set-key (kbd "C-:") 'hippie-expand-lines)
-(global-set-key (kbd "C-,") 'completion-at-point)
-
-(require 'misc)
-(global-set-key (kbd "s-.") 'copy-from-above-command)
+(global-set-key (kbd "C-.") 'hippie-expand)
 
 ;; Smart M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -20,9 +15,6 @@
 
 ;; Expand region (increases selected region by semantic units)
 (global-set-key (kbd "C-'") 'er/expand-region)
-
-;; Replace rectangle-text with inline-string-rectangle
-(global-set-key (kbd "C-x r t") 'inline-string-rectangle)
 
 ;; Quickly jump in document with ace-jump-mode
 (define-key global-map (kbd "C-;") 'ace-jump-mode)
@@ -51,20 +43,6 @@
 (global-set-key (kbd "M-t s") 'transpose-sexps)
 (global-set-key (kbd "M-t p") 'transpose-params)
 
-;; Interactive selective display
-(global-set-key (kbd "C-x $") 'inc-selective-display)
-
-;; Change next underscore with a camel case
-(global-set-key (kbd "C-c C--") 'replace-next-underscore-with-camel)
-(global-set-key (kbd "M-s M--") 'snakeify-current-word)
-
-;; Change word separators
-(global-unset-key (kbd "C-x +")) ;; used to be balance-windows
-(global-set-key (kbd "C-x + -") (λ (replace-region-by 's-dashed-words)))
-(global-set-key (kbd "C-x + _") (λ (replace-region-by 's-snake-case)))
-(global-set-key (kbd "C-x + c") (λ (replace-region-by 's-lower-camel-case)))
-(global-set-key (kbd "C-x + C") (λ (replace-region-by 's-upper-camel-case)))
-
 ;; Killing text
 (global-set-key (kbd "C-S-k") 'kill-and-retry-line)
 (global-set-key (kbd "C-w") 'kill-region-or-backward-word)
@@ -87,9 +65,9 @@
 (global-set-key (kbd "s-Z") (lambda (char) (interactive "cZap to char backwards: ") (zap-to-char -1 char)))
 
 ;; iy-go-to-char - like f in Vim
-(global-set-key (kbd "M-m") 'jump-char-forward)
-(global-set-key (kbd "M-M") 'jump-char-backward)
-(global-set-key (kbd "s-m") 'jump-char-backward)
+(global-set-key (kbd "M-m") 'iy-go-to-char)
+(global-set-key (kbd "M-M") 'iy-go-to-char-backward)
+(global-set-key (kbd "s-m") 'iy-go-to-char-backward)
 
 ;; vim's ci and co commands
 (global-set-key (kbd "M-I") 'change-inner)
@@ -123,9 +101,6 @@
 ;; Revert without any fuss
 (global-set-key (kbd "M-<escape>") (λ (revert-buffer t t)))
 
-;; Edit file with sudo
-(global-set-key (kbd "M-s e") 'sudo-edit)
-
 ;; Copy file path to kill ring
 (global-set-key (kbd "C-x M-w") 'copy-current-file-path)
 
@@ -137,9 +112,6 @@
 
 (global-set-key (kbd "C-x 3") 'split-window-right-and-move-there-dammit)
 
-;; Add region to *multifile*
-(global-set-key (kbd "C-!") 'mf/mirror-region-in-multifile)
-
 ;; Indentation help
 (global-set-key (kbd "M-j") (λ (join-line -1)))
 
@@ -150,8 +122,6 @@
 (global-set-key (kbd "C-c C-e") 'eval-and-replace)
 
 ;; Navigation bindings
-(global-set-key [remap goto-line] 'goto-line-with-feedback)
-
 (global-set-key (kbd "<prior>") 'beginning-of-buffer)
 (global-set-key (kbd "<home>") 'beginning-of-buffer)
 (global-set-key (kbd "<next>") 'end-of-buffer)
@@ -236,17 +206,6 @@
 
 ;; Yank and indent
 (global-set-key (kbd "C-S-y") 'yank-unindented)
-
-;; Toggle quotes
-(global-set-key (kbd "C-\"") 'toggle-quotes)
-
-;; Sorting
-(global-set-key (kbd "M-s l") 'sort-lines)
-
-;; Increase number at point (or other change based on prefix arg)
-(global-set-key (kbd "C-+") 'change-number-at-point)
-(global-set-key (kbd "C-?") 'subtract-number-at-point)
-(eval-after-load 'undo-tree '(define-key undo-tree-map (kbd "C-?") nil))
 
 ;; Browse the kill ring
 (global-set-key (kbd "C-x C-y") 'browse-kill-ring)
