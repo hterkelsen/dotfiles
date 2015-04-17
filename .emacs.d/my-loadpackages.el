@@ -28,3 +28,9 @@
 
 ;; Colors
 (load-theme 'monokai t)
+
+;; Smart parens
+(require 'smartparens-config)
+
+;; Rainbow delimiters
+(add-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode)

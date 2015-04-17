@@ -23,6 +23,10 @@
     company-ycmd
     flycheck-ycmd
     monokai-theme
+    flycheck-cask
+    smartparens
+    rainbow-delimiters
+    yasnippet
   ) "a list of packages to ensure are installed at launch.")
 
 (require 'cl)

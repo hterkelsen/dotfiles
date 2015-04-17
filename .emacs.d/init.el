@@ -15,7 +15,7 @@
 (column-number-mode)
 
 ;; Hippie-expand
-(global-set-key (kbd "M-/") 'hippie-expand)
+(global-set-key (kbd "C-.") 'hippie-expand)
 
 ;; Use directory names to uniquify buffers
 (require 'uniquify)
