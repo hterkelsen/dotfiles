@@ -29,6 +29,9 @@
 ;; load keybindings mostly stolen from the 'emacs rocks' guy
 (require 'key-bindings)
 
+;; Remove text in active region if inserting text
+(delete-selection-mode 1)
+
 ;; load custom stuff
 (setq custom-file "~/.emacs.d/custom.el")
 (if (file-readable-p custom-file)
