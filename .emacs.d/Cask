@@ -20,6 +20,7 @@
 (depends-on "flycheck-ycmd")
 (depends-on "git-commit-mode")
 (depends-on "git-rebase-mode")
+(depends-on "github-clone")
 (depends-on "helm")
 (depends-on "helm-ag")
 (depends-on "helm-projectile")
