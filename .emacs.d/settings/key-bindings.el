@@ -13,6 +13,9 @@
 ;; Use C-x C-m to do M-x per Steve Yegge's advice
 (global-set-key (kbd "C-x C-m") 'helm-M-x)
 
+;; Use helm-mini
+(global-set-key (kbd "C-x b") 'helm-mini)
+
 ;; Expand region (increases selected region by semantic units)
 (global-set-key (kbd "C-'") 'er/expand-region)
 
