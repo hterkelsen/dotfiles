@@ -20,10 +20,6 @@
 (require 'setup-smartparens)
 (require 'setup-ycmd)
 
-;; Flycheck integration with Dart
-(load "~/git/flycheck-dart/flycheck-dart.el")
-(require 'flycheck-dart)
-
 ;; Functions (load all files in defuns-dir)
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
 (dolist (file (directory-files defuns-dir t "\\w+"))
