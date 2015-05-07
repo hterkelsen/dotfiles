@@ -13,6 +13,7 @@
 
 ;; set up package configuration
 (require 'setup-company)
+(require 'setup-dart)
 (require 'setup-flycheck)
 (require 'setup-helm)
 (require 'setup-projectile)
