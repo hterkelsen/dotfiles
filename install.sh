@@ -4,20 +4,15 @@ DOTFILES=$(pwd)
 
 pushd $HOME >/dev/null
 
-mkdir -p .emacs.d
-pushd .emacs.d >/dev/null
-for f in $DOTFILES/.emacs.d/*; do
-    rm -f $(basename $f)
-    ln -s $f $(basename $f)
-done
-popd >/dev/null
+# install spacemacs file
+rm .spacemacs
+ln -s $DOTFILES/.spacemacs .spacemacs
 
-mkdir -p bin
-pushd bin >/dev/null
-for f in $DOTFILES/bin/*; do
-    rm -f $(basename $f)
-    ln -s $f $(basename $f)
-done
+# install spacemacs private layers
+pushd .emacs.d >/dev/null
+PRIVATE_LAYER=$DOTFILES/.emacs.d/private
+rm -rf $(basename $PRIVATE_LAYER)
+ln -s $PRIVATE_LAYER $(basename $PRIVATE_LAYER)
 popd >/dev/null
 
 popd >/dev/null
