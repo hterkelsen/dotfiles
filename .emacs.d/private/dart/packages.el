@@ -13,6 +13,7 @@
 (defvar dart-packages
   '(
     dart-mode
+    flycheck
     )
   "List of all packages to install and/or initialize. Built-in packages
 which require an initialization must be listed explicitly in the list.")
@@ -24,10 +25,8 @@ which require an initialization must be listed explicitly in the list.")
   "Initialize Dart Mode"
   (use-package dart-mode
     :mode ("\\.dart\\'" . dart-mode)
-    :config
-      (setq dart-debug t))
-  )
+  ))
 
-;; (defun dart/post-init-flycheck ()
-;;   (setq dart-enable-analysis-server t)
-;;   (add-hook 'dart-mode-hook 'flycheck-mode))
+(defun dart/post-init-flycheck ()
+  (setq dart-enable-analysis-server t)
+  (add-hook 'dart-mode-hook 'flycheck-mode))
