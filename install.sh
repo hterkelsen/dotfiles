@@ -4,15 +4,8 @@ DOTFILES=$(pwd)
 
 pushd $HOME >/dev/null
 
-# install spacemacs file
-rm .spacemacs
-ln -s $DOTFILES/.spacemacs .spacemacs
-
-# install spacemacs private layers
-pushd .emacs.d >/dev/null
-PRIVATE_LAYER=$DOTFILES/.emacs.d/private
-rm -rf $(basename $PRIVATE_LAYER)
-ln -s $PRIVATE_LAYER $(basename $PRIVATE_LAYER)
-popd >/dev/null
+ln -s $DOTFILES/.zshrc $HOME/.zshrc
+ln -s $DOTFILES/.git.zsh $HOME/.git.zsh
+ln -s $DOTFILES/.dev.zsh $HOME/.dev.zsh
 
 popd >/dev/null
