@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+if [ -z "$DART_SRC" ]; then
+  echo "You must set the DART_SRC environment variable to your checkout of the Dart SDK"
+  exit 1
+fi
+
+if [ -z "$DART_SRC_OUT" ]; then
+  echo "You must set the DART_SRC_OUT environment variable to the build output folder "
+  echo "for your checked out Dart SDK. For example: '$DART_SRC/out/ReleaseX64'"
+  exit 1
+fi
+
+dart \
+  --package-root=$DART_SRC_OUT/packages \
+  $DART_SRC/pkg/compiler/lib/src/dart2js.dart \
+  "$@"

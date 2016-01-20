@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ -z "$DART_SRC" ]; then
+  echo "You must set the DART_SRC environment variable to your checkout of the Dart SDK"
+  exit 1
+fi
+
+$DART_SRC/third_party/d8/linux/d8 $DART_SRC/sdk/lib/_internal/js_runtime/lib/preambles/d8.js "$@"

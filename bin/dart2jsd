@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+if [ -z "$DART_SRC" ]; then
+  echo "You must set the DART_SRC environment variable to your checkout of the Dart SDK"
+  exit 1
+fi
+
+if [ -z "$DART_SRC" ]; then
+  echo "You must set the DART_SRC environment variable to your checkout of the Dart SDK"
+  exit 1
+fi
+
+dart \
+  --checked \
+  --package-root=$DART_SRC_OUT/packages \
+  --observe=8083/0.0.0.0 \
+  $DART_SRC/pkg/compiler/lib/src/dart2js.dart \
+  "$@"
