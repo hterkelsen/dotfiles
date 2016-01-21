@@ -31,12 +31,12 @@ select-word-style bash
 # Enable autocomplete
 autoload -U compinit
 compinit
-setopt hash_list_all    # hash everything before completion
-setopt completealiases  # autocomplete aliases
-setopt always_to_end    # move cursor to end of completed word
-setopt complete_in_word # allow completion in middle of word
-setopt correct          # spelling correction
-setopt list_ambiguous   # complete as much as possible before it gets ambiguous
+setopt hash_list_all     # hash everything before completion
+setopt no_complete_aliases  # autocomplete aliases
+setopt always_to_end     # move cursor to end of completed word
+setopt complete_in_word  # allow completion in middle of word
+setopt correct           # spelling correction
+setopt list_ambiguous    # complete as much as possible before it gets ambiguous
 
 zstyle ':completion::complete:*' use-cache on              # completion caching
 zstyle ':completion:*' cache-path ~/.zsh/cache
@@ -75,8 +75,8 @@ export P4CONFIG=".p4config"
 export P4EDITOR="$EDITOR"
 
 # Basic aliases
-alias ls="ls --color=auto"
-alias grep="grep --color=auto"
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 
 # Set up git stuff
 source $HOME/.git.zsh
