@@ -5,6 +5,9 @@ typeset -U path
 export DART_SRC="$HOME/Code/dart/sdk"
 export DART_SRC_OUT="$DART_SRC/out/ReleaseX64"
 
+# Add pub globally activated executables
+path=( $HOME/.pub-cache/bin $path[@] )
+
 # Add depot_tools
 path=( $HOME/Code/depot_tools $path[@] )
 
