@@ -7,6 +7,7 @@ pushd $HOME >/dev/null
 ln -s $DOTFILES/.zshrc $HOME/.zshrc
 ln -s $DOTFILES/.git.zsh $HOME/.git.zsh
 ln -s $DOTFILES/.dev.zsh $HOME/.dev.zsh
+ln -s $DOTFILES/.ubuntu.zsh $HOME/.ubuntu.zsh
 
 mkdir -p $HOME/bin
 ln -s $DOTFILES/bin/dart2jsd $HOME/bin/dart2jsd

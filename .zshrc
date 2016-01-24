@@ -10,6 +10,7 @@ if [ -f /etc/profile ]; then
 fi
 
 # Set up custom functions folder
+# TODO(hterkelsen): do this in install.sh
 ZFUNCTIONS="$HOME/.zfunctions"
 fpath=( $ZFUNCTIONS $fpath )
 
@@ -84,8 +85,10 @@ source $HOME/.git.zsh
 # Set up dev stuff
 source $HOME/.dev.zsh
 
+# Set up Ubuntu stuff
+source $HOME/.ubuntu.zsh
+
 # Secret, machine-specific stuff
 if [ -f $HOME/.secret.zsh ]; then
   source $HOME/.secret.zsh
 fi
-

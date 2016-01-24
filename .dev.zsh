@@ -1,9 +1,17 @@
 # Set up things to do local development
 typeset -U path
 
-# Dart stuff
+# Dart SDK
+export DART_SDK="$HOME/bin/dart-sdk"
+path=( $DART_SDK/bin $path[@] )
+
+# Dart development stuff
 export DART_SRC="$HOME/Code/dart/sdk"
 export DART_SRC_OUT="$DART_SRC/out/ReleaseX64"
+
+# Add Flutter
+export FLUTTER="$HOME/Code/flutter"
+path=( $FLUTTER/bin $path[@] )
 
 # Add pub globally activated executables
 path=( $HOME/.pub-cache/bin $path[@] )
