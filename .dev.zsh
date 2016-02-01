@@ -22,3 +22,12 @@ path=( $HOME/Code/depot_tools $path[@] )
 # Add Android stuff
 export ANDROID_SDK="$HOME/bin/android-sdk-linux"
 path=( $ANDROID_SDK/platform-tools $path[@] )
+
+# Google Cloud SDK
+export GOOGLE_CLOUD_SDK="$HOME/bin/google-cloud-sdk"
+
+# The next line updates PATH for the Google Cloud SDK.
+source "$GOOGLE_CLOUD_SDK/path.zsh.inc"
+
+# The next line enables shell command completion for gcloud.
+source "$GOOGLE_CLOUD_SDK/completion.zsh.inc"
