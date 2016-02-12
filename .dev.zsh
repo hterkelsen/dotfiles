@@ -5,8 +5,8 @@ typeset -U path
 export DART_SDK="$HOME/bin/dart-sdk"
 path=( $DART_SDK/bin $path[@] )
 
-DARTIUM_DIR="$HOME/bin/dartium"
-alias dartium="$DARTIUM_DIR/chrome"
+export DARTIUM_BIN="$HOME/bin/dartium/chrome"
+alias dartium="$DARTIUM_BIN"
 
 # Dart development stuff
 export DART_SRC="$HOME/Code/dart/sdk"
