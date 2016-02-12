@@ -18,6 +18,7 @@ alias gd='git diff'
 alias gl='git pull'
 
 alias gm='git merge'
+alias gmm='git merge master'
 
 alias gp='git push'
 

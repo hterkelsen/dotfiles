@@ -34,3 +34,10 @@ source "$GOOGLE_CLOUD_SDK/path.zsh.inc"
 
 # The next line enables shell command completion for gcloud.
 source "$GOOGLE_CLOUD_SDK/completion.zsh.inc"
+
+# Haskell
+path=( $HOME/.cabal/bin $path[@] )
+
+# Go
+export GOPATH="$HOME/Code/go"
+path=( $GOPATH/bin $path[@] )
