@@ -1,6 +1,7 @@
 # Set up git stuff
 alias gcl='git clone --recursive'
 
+alias ga='git add'
 alias gaa='git add --all'
 
 alias gb='git branch'

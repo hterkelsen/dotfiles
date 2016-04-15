@@ -41,3 +41,7 @@ path=( $HOME/.cabal/bin $path[@] )
 # Go
 export GOPATH="$HOME/Code/go"
 path=( $GOPATH/bin $path[@] )
+
+# Node
+export NVM_DIR="/usr/local/google/home/het/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
