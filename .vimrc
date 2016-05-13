@@ -13,18 +13,26 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 set number
+set incsearch
 set hlsearch
 let mapleader=','
 set expandtab
+set smarttab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+set smartindent
 set autoindent
 set autoread
 set wildmode=longest,list
 set wildmenu
 imap jk <esc>
 nnoremap <leader><leader> <c-^>
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
 " colors
 set t_Co=256
