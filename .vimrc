@@ -1,6 +1,6 @@
 set nocompatible
 
-" Vundle
+" vundle
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -9,7 +9,7 @@ Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'kien/ctrlp.vim'
 call vundle#end()
 
-" Normal
+" normal
 filetype plugin indent on
 syntax on
 set number
@@ -20,17 +20,13 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set autoindent
+set autoread
+set wildmode=longest,list
+set wildmenu
+imap jk <esc>
+nnoremap <leader><leader> <c-^>
 
-" jk to leave insert mode
-imap jk <Esc>
-
-" Pretty colors
+" colors
 set t_Co=256
 set background=dark
 
-" Bashlike file completion
-set wildmode=longest,list,full
-set wildmenu
-
-" always reload files that changed on disk
-set autoread
