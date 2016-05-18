@@ -70,6 +70,9 @@ setopt APPEND_HISTORY # append to the end of the history file
 setopt auto_remove_slash
 setopt chase_links
 
+# Vim mode
+bindkey -v
+
 # Various variables
 export EDITOR="vim"
 export P4CONFIG=".p4config"
