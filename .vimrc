@@ -9,6 +9,12 @@ Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'kien/ctrlp.vim'
 call vundle#end()
 
+" work stuff
+if filereadable(expand('~/.at_google'))
+  " Google-only
+  source ~/.vimrc_local
+endif
+
 " normal
 filetype plugin indent on
 syntax on
