@@ -1,12 +1,10 @@
 # Set up things to do local development
 typeset -U path
 
-# Dart SDK
-export DART_SDK="$HOME/bin/dart-sdk"
-path=( $DART_SDK/bin $path[@] )
-
-export DARTIUM_BIN="$HOME/bin/dartium/chrome"
-alias dartium="$DARTIUM_BIN"
+# Dart
+if [[ -f ~/.dvm/scripts/dvm ]]; then
+  . ~/.dvm/scripts/dvm
+fi
 
 # Dart development stuff
 export DART_SRC="$HOME/Code/dart/sdk"
@@ -20,7 +18,7 @@ path=( $FLUTTER/bin $path[@] )
 path=( $HOME/.pub-cache/bin $path[@] )
 
 # Add depot_tools
-path=( $HOME/Code/depot_tools $path[@] )
+path=( $path[@] $HOME/Code/depot_tools )
 
 # Add Android stuff
 export ANDROID_SDK="$HOME/bin/android-sdk-linux"
