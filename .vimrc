@@ -34,6 +34,8 @@ set wildmode=longest,list
 set wildmenu
 imap jk <esc>
 nnoremap <leader><leader> <c-^>
+set ignorecase
+set smartcase
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
