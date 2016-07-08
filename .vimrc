@@ -5,8 +5,8 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'dart-lang/dart-vim-plugin'
-Plugin 'kien/ctrlp.vim'
 call vundle#end()
 
 " work stuff
@@ -46,3 +46,10 @@ nnoremap <c-l> <c-w>l
 set t_Co=256
 set background=dark
 
+" dart sdk location
+let g:ycm_dart_sdk_path='/usr/local/google/home/het/.dvm/darts/1.18.0-dev.2.0'
+
+" youcompleteme disable gutter
+let g:ycm_enable_diagnostic_signs = 0
+
+nmap <c-]> :YcmCompleter GoToDefinition<cr>
