@@ -12,6 +12,5 @@ if [ -z "$DART_SRC_OUT" ]; then
 fi
 
 dart \
-  --package-root=$DART_SRC_OUT/packages \
   $DART_SRC/pkg/compiler/lib/src/dart2js.dart \
   "$@"
