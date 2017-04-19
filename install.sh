@@ -13,6 +13,9 @@ ln -s $DOTFILES/.ubuntu.zsh $HOME/.ubuntu.zsh
 # vim
 ln -s $DOTFILES/.vimrc $HOME/.vimrc
 
+# tmux
+ln -s $DOTFILES/.tmux.conf $HOME/.tmux.conf
+
 # scripts
 mkdir -p $HOME/bin
 ln -s $DOTFILES/bin/dart2jsd $HOME/bin/dart2jsd
