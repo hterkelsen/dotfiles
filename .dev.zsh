@@ -1,6 +1,9 @@
 # Set up things to do local development
 typeset -U path
 
+# Local scripts
+path=( $HOME/bin $path[@] )
+
 # Dart
 if [[ -f ~/.dvm/scripts/dvm ]]; then
   . ~/.dvm/scripts/dvm
