@@ -57,7 +57,7 @@ set undofile
 
 " File/Buffer/Code navigation
 nnoremap <leader>o :edit %:h<cr>
-nnoremap <leader>lf :Files<cr>
+nnoremap <leader>N :Files<cr>
 nnoremap <leader>lr :History<cr>
 nnoremap <leader>lb :Buffers<cr>
 nnoremap <leader>lq :QuickFix<cr>
@@ -68,7 +68,12 @@ nnoremap <leader>x :bp\|bd #<cr>
 " Colors
 set t_Co=256
 set background=dark
+colorscheme solarized
 
 " Language server plugin
 let g:lsc_auto_map = v:true
 let g:lsc_server_commands = {'dart': 'dart_language_server', 'python': 'pyls'}
+
+nnoremap <leader>n :LSClientWorkspaceSymbol<cr>
+nnoremap <leader>b :LSClientGoToDefinition<cr>
+nnoremap <leader>B :LSClientFindReferences<cr>
