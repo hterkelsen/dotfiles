@@ -122,6 +122,11 @@ alias grv='git remote -v'
 
 alias gst='git status'
 
+# Tmux sessions
+alias s=session_finder
+_tmux_sessions() { tmux ls -F "#{session_name}" 2>/dev/null }
+compdef '_arguments "1:tmux session:($(_tmux_sessions))"' session_finder
+
 # Dart
 if [[ -f ~/.dvm/scripts/dvm ]]; then
   . ~/.dvm/scripts/dvm
