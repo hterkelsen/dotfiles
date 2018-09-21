@@ -38,6 +38,23 @@ set ignorecase
 set smartcase
 set backspace=indent,eol,start
 
+" Backups
+set nobackup
+set backupcopy=yes
+let swpdir = expand('~/.vim/swp')
+if !isdirectory(swpdir)
+  call mkdir(swpdir)
+endif
+set directory=~/.vim/swp//
+
+" Persistent undo
+let undodir = expand('~/.vim/undo')
+if !isdirectory(undodir)
+  call mkdir(undodir)
+endif
+set undodir=~/.vim/undo
+set undofile
+
 " File/Buffer/Code navigation
 nnoremap <leader>o :edit %:h<cr>
 nnoremap <leader>lf :Files<cr>

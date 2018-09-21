@@ -128,18 +128,18 @@ if [[ -f ~/.dvm/scripts/dvm ]]; then
 fi
 
 # Dart development stuff
-export DART_SRC="$HOME/Code/dart/sdk"
+export DART_SRC="$HOME/Projects/dart/sdk"
 export DART_SRC_OUT="$DART_SRC/out/ReleaseX64"
 
 # Add Flutter
-export FLUTTER="$HOME/Code/flutter"
+export FLUTTER="$HOME/Projects/flutter"
 path+=( $FLUTTER/bin )
 
 # Add pub globally activated executables
 path+=( $HOME/.pub-cache/bin )
 
 # Add depot_tools
-path+=( $HOME/Code/depot_tools )
+path+=( $HOME/Projects/depot_tools )
 
 # Add Android stuff
 export ANDROID_HOME="$HOME/Android/Sdk"
@@ -149,7 +149,7 @@ path+=( $ANDROID_HOME/platform-tools )
 path+=( $HOME/.cabal/bin )
 
 # Go
-export GOPATH="$HOME/Code/go"
+export GOPATH="$HOME/Projects/go"
 path+=( $GOPATH/bin )
 
 # Set up Ubuntu stuff
