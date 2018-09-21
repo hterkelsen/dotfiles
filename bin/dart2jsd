@@ -12,7 +12,6 @@ if [ -z "$DART_SRC_OUT" ]; then
 fi
 
 $DART_SRC_OUT/dart \
-  --checked \
   --observe=8083/0.0.0.0 \
   $DART_SRC/pkg/compiler/lib/src/dart2js.dart \
   "$@"

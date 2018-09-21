@@ -1,0 +1,19 @@
+dir=$(pwd)
+olddir=~/.dotfiles.bak
+
+echo "Creating $olddir for backup of any existing dotfiles in ~"
+mkdir -p $olddir
+echo "...done"
+
+for file in $(ls); do
+  if [ -h ~/.$file ]; then
+    echo "Removing old link to $file"
+    rm ~/.$file
+  fi
+  if [ -f ~/.$file -o -d ~/.$file ]; then
+    echo "Moving existing $file from ~ to $olddir"
+    mv ~/.$file $olddir
+  fi
+  echo "Creating symlink to $file in home directory."
+  ln -s $dir/$file ~/.$file
+done
