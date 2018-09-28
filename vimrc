@@ -7,7 +7,13 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+Plug 'wellle/targets.vim'
 call plug#end()
+
+call glaive#Install()
 
 " Work stuff
 if filereadable(expand('~/.at_google'))
@@ -58,6 +64,7 @@ set undofile
 " File/Buffer/Code navigation
 nnoremap <leader>o :edit %:h<cr>
 nnoremap <leader>N :Files<cr>
+nnoremap <leader>F :Ag<cr>
 nnoremap <leader>lr :History<cr>
 nnoremap <leader>lb :Buffers<cr>
 nnoremap <leader>lq :QuickFix<cr>
@@ -72,8 +79,22 @@ colorscheme solarized
 
 " Language server plugin
 let g:lsc_auto_map = v:true
-let g:lsc_server_commands = {'dart': 'dart_language_server', 'python': 'pyls'}
+let g:lsc_server_commands = {
+    \ 'dart': 'google3_dart_language_server',
+    \ 'python': 'pyls',
+    \ 'bzl': '/google/bin/releases/grok/tools/kythe_languageserver --google3'
+    \ }
 
 nnoremap <leader>n :LSClientWorkspaceSymbol<cr>
 nnoremap <leader>b :LSClientGoToDefinition<cr>
 nnoremap <leader>B :LSClientFindReferences<cr>
+
+" Code formatting
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
+augroup END

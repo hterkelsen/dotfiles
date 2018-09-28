@@ -128,20 +128,14 @@ _tmux_sessions() { tmux ls -F "#{session_name}" 2>/dev/null }
 compdef '_arguments "1:tmux session:($(_tmux_sessions))"' session_finder
 
 # Dart
-if [[ -f ~/.dvm/scripts/dvm ]]; then
-  . ~/.dvm/scripts/dvm
-fi
-
-# Dart development stuff
 export DART_SRC="$HOME/Projects/dart/sdk"
 export DART_SRC_OUT="$DART_SRC/out/ReleaseX64"
+
+path+=( $HOME/dart-sdk/bin $HOME/.pub-cache/bin )
 
 # Add Flutter
 export FLUTTER="$HOME/Projects/flutter"
 path+=( $FLUTTER/bin )
-
-# Add pub globally activated executables
-path+=( $HOME/.pub-cache/bin )
 
 # Add depot_tools
 path+=( $HOME/Projects/depot_tools )

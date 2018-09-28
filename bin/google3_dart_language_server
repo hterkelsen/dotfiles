@@ -1,0 +1,6 @@
+#!/bin/bash
+DART_SDK=$HOME/dart-sdk
+if [[ "$PWD" == */google3* ]]; then
+  DART_SDK=/usr/lib/google-dartlang
+fi
+$DART_SDK/bin/pub global run dart_language_server
